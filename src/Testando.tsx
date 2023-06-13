@@ -1,10 +1,23 @@
 import styled from 'styled-components'
 
-const Botao = styled.button`
-  background-color: red;
+type BotaoProps = {
+  principal: boolean
+  fontSize?: string
+}
+
+const Botao = styled.button<BotaoProps>`
+  background-color: ${(props) => (props.principal ? 'green' : 'blue')};
+  font-size: ${(props) => props.fontSize || '16px'};
 `
 
 function Testando() {
-  return <Botao>clique aqui</Botao>
+  return (
+    <>
+      <Botao principal>Enviar</Botao>
+      <Botao fontSize="14px" principal={false}>
+        Cancelar
+      </Botao>
+    </>
+  )
 }
 export default Testando
