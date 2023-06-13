@@ -1,0 +1,46 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "overrides": [
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/prop-type": "off",
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/explicit-boundary-type":"off"
+    },
+    "settings":{
+      "react":{
+        "version": "detect"
+      }
+    }
+  }
+//     "react-hooks/rules-of-hooks": "error": Esta regra assegura que os Hooks do React sejam usados conforme as regras estabelecidas pela equipe do React. Isso inclui regras como "Não chame Hooks dentro de loops, condições ou funções aninhadas" e "Chame Hooks apenas de componentes funcionais do React". Se uma dessas regras for violada, o ESLint retornará um erro.
+
+// "react-hooks/exhaustive-deps": "warn": Esta regra alerta sobre as dependências que possivelmente estão faltando no array de dependências do Hook useEffect. Ou seja, quando você usa o Hook useEffect e menciona algumas variáveis no seu interior, todas essas variáveis devem estar no array de dependências.
+
+// "react/prop-types": "off": O React tem uma funcionalidade que permite verificar os tipos das props passadas a um componente, conhecida como PropTypes. Esta regra desativa a necessidade de validar as PropTypes. Normalmente, você faria isso se estivesse usando algum outro sistema de tipos, como o TypeScript.
+
+// "react/react-in-jsx-scope": "off": Esta regra desativa a necessidade de sempre importar 'React' quando usar JSX. No React 17 e versões posteriores, não é necessário importar o React para usar JSX, então você pode querer desligar essa regra.
+
+// "@typescript-eslint/explicit-function-return-type":"off": Esta regra desativa a necessidade de explicitar o tipo de retorno de funções no TypeScript. Isso pode ser útil se você preferir a inferência de tipos do TypeScript em vez de anotar todos os tipos de retorno de função.
+
